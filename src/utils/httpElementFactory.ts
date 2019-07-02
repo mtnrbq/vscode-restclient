@@ -112,8 +112,15 @@ export class HttpElementFactory {
             Constants.RandomIntDescription,
             new SnippetString(`{{$\${name:${Constants.RandomIntVariableName.slice(1)}} \${1:min} \${2:max}}}`)));
         originalElements.push(new HttpElement(
+            Constants.ProcessEnvVariableName,
+            ElementType.SystemVariable,
+            null,
+            Constants.ProcessEnvDescription,
+            new SnippetString(`{{$\${name:${Constants.ProcessEnvVariableName.slice(1)}} \${2:process environment variable name}}}`)
+        ));
+        originalElements.push(new HttpElement(
             Constants.AzureActiveDirectoryVariableName,
-        ElementType.SystemVariable,
+            ElementType.SystemVariable,
             null,
             Constants.AzureActiveDirectoryDescription,
             new SnippetString(`{{$\${name:${Constants.AzureActiveDirectoryVariableName.slice(1)}}}}`)));
